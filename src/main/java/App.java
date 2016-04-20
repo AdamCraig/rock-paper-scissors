@@ -71,6 +71,9 @@ public class App {
     } else if (firstPlay.equals("Paper") && secondPlay.equals("Rock") || firstPlay.equals("Rock") && secondPlay.equals("Paper")) {
       winningString = "Paper Wins!";
     }
+    else {
+      winningString = "Tie!";
+    }
     return winningString;
     }
 
@@ -84,6 +87,9 @@ public class App {
       computerChoice = "Scissors";
     } else if (computerChoiceInteger == 1) {
       computerChoice = "Paper";
+    }
+    else {
+      computerChoice = "Rock";
     }
     return computerChoice;
   }

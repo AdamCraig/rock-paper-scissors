@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.junit.Assert.*;
+import org.openqa.selenium.By;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -31,6 +32,33 @@ public class AppTest extends FluentTest {
     click("option", withText("Scissors"));
     submit("#onePlayerButton");
     assertThat(pageSource()).contains("You Chose...", "Scissors");
+  }
+
+  @Test
+  public void twoPlayerSubmission() {
+    goTo("http://localhost:4567/");
+    submit("#twoPlayerButton");
+    assertThat(pageSource()).contains("Player One, Enter your play!");
+  }
+
+  @Test
+  public void twoPlayerSubmissionPlayerOneRocks() {
+    goTo("http://localhost:4567/");
+    submit("#twoPlayerButton");
+    click("option", withText("Rock"));
+    submit("#playerOneSelection");
+    assertThat(pageSource()).contains("Player Two, Enter your play!");
+  }
+
+  @Test
+  public void twoPlayerSubmissionPlayerOneRocksPlayerTwoPaper() {
+    goTo("http://localhost:4567/");
+    submit("#twoPlayerButton");
+    click("option", withText("Rock"));
+    submit("#playerOneSelection");
+    click("option", withText("Paper"));
+    submit("#playerTwoSelection");
+    assertThat(pageSource()).contains("Rock", "Paper", "Paper Wins!");
   }
 
   @Test
