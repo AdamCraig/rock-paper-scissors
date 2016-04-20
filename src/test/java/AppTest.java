@@ -10,8 +10,26 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AppTest {
 
   @Test
-  public void checkWinner_rockBeatsScissors_true() {
+  public void checkWinner_rockBeatsScissors_rockWins() {
     App testGame = new App();
-    assertEquals("Rock Wins!", testGame.checkWinner("Rock", "Scissors"));
+    assertEquals("Rock Wins!", testGame.checkWinner("Scissors", "Rock"));
+  }
+
+  @Test
+  public void checkWinner_paperBeatsRock_paperWins() {
+    App testGame = new App();
+    assertEquals("Paper Wins!", testGame.checkWinner("Paper", "Rock"));
+  }
+
+  @Test
+  public void checkWinner_scissorsBeatsPaper_scissorsWins() {
+    App testGame = new App();
+    assertEquals("Scissors Wins!", testGame.checkWinner("Scissors", "Paper"));
+  }
+
+  @Test
+  public void checkWinner_reversedPlaysWin_secondPlayWins() {
+    App testGame = new App();
+    assertEquals("Scissors Wins!", testGame.checkWinner("Paper", "Scissors"));
   }
 }
