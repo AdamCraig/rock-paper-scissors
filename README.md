@@ -25,10 +25,6 @@ Adam Craig at ajcraig@suffolk.edu_
 
 _HTML, CSS, Bootstrap, Java, Spark, JUnit, Gradle, Velocity, FluentLenium_
 
-##GitHub Pages Link
-
-_http://adamcraig.github.io/spooky-slots_
-
 ### License
 
 _The MIT License (MIT)
