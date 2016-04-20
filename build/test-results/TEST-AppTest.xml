@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AppTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-04-20T16:33:14" hostname="epicodus-55.local" time="0.001">
+<testsuite name="AppTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-04-20T16:52:32" hostname="epicodus-55.local" time="0.003">
   <properties/>
   <testcase name="checkWinner_reversedPlaysWin_secondPlayWins" classname="AppTest" time="0.001"/>
+  <testcase name="checkWinner_bothInputsAreEqual_tie" classname="AppTest" time="0.0"/>
   <testcase name="checkWinner_scissorsBeatsPaper_scissorsWins" classname="AppTest" time="0.0"/>
   <testcase name="checkWinner_rockBeatsScissors_rockWins" classname="AppTest" time="0.0"/>
   <testcase name="checkWinner_paperBeatsRock_paperWins" classname="AppTest" time="0.0"/>
+  <testcase name="computerChooses_shouldBeAString_true" classname="AppTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

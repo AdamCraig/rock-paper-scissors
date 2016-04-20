@@ -32,4 +32,17 @@ public class AppTest {
     App testGame = new App();
     assertEquals("Scissors Wins!", testGame.checkWinner("Paper", "Scissors"));
   }
+
+  @Test
+  public void checkWinner_bothInputsAreEqual_tie() {
+    App testGame = new App();
+    assertEquals("Tie!", testGame.checkWinner("Scissors", "Scissors"));
+  }
+
+  @Test
+  public void computerChooses_shouldBeAString_true() {
+    App testGame = new App();
+    String computerChoice = testGame.computerChooses();
+    assertEquals(true, computerChoice instanceof String);
+  }
 }
