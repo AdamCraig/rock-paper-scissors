@@ -26,6 +26,40 @@ public class App {
       model.put("template", "templates/results.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/twoPlayerHome", (request, response) -> {
+      String playerOne = "";
+      HashMap model = new HashMap();
+      model.put("template", "templates/twoPlayerHome.vtl");
+      model.put("playerOne", playerOne);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/playerTwoSelect", (request, response) -> {
+      HashMap model = new HashMap();
+      String playerTwo = "";
+      String playerOne = "";
+      playerOne = request.queryParams("playerOne");
+      model.put("template", "templates/playerTwoSelect.vtl");
+      model.put("playerTwo", playerTwo);
+      model.put("playerOne", playerOne);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/twoPlayerResults", (request, response) -> {
+      HashMap model = new HashMap();
+      String playerOne = "";
+      String playerTwo = "";
+      playerOne = request.queryParams("playerOne");
+      playerTwo = request.queryParams("playerTwo");
+      String winner = App.checkWinner(playerOne, playerTwo);
+      model.put("playerOne", playerOne);
+      model.put("playerTwo", playerTwo);
+      model.put("winner", winner);
+      model.put("template", "templates/twoPlayerResults.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 
   public static String checkWinner(String firstPlay, String secondPlay) {
